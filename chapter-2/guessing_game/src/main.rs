@@ -17,6 +17,7 @@
 
 use rand::Rng; //random number generators implement Rng
 use std::io;
+use std::cmp::Ordering;
 
 fn main() {
     println!("Guess the number");
@@ -30,5 +31,12 @@ fn main() {
     io::stdin()
         .read_line(&mut guess)
         .expect("Error reading line");
+
+    match guess.cmp(&secret_number){
+        Ordering::Less=>println!("Too less");
+        Ordering::Greater=>println!("Too big");
+        Ordering::Equal=>println!("You win!");
+    }
+
     println!("Your guess is {}", guess);
 }
