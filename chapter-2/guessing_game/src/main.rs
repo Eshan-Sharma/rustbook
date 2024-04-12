@@ -16,8 +16,8 @@
 // }
 
 use rand::Rng; //random number generators implement Rng
-use std::io;
 use std::cmp::Ordering;
+use std::io;
 
 fn main() {
     println!("Guess the number");
@@ -25,18 +25,22 @@ fn main() {
                                                               // gen_range takes the range expression as argument and generates random number in range
                                                               //start..=end this is inclusive lower and upper bound
     println!("Secret number is {secret_number}");
-    println!("Please input your guess number");
-    let mut guess = String::new();
+    loop {
+        println!("Please input your guess number");
+        let mut guess = String::new();
 
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Error reading line");
-
-    match guess.cmp(&secret_number){
-        Ordering::Less=>println!("Too less");
-        Ordering::Greater=>println!("Too big");
-        Ordering::Equal=>println!("You win!");
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("Error reading line");
+        let guess: u32 = guess.trim().parse().expect("Please type a number!");
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too less"),
+            Ordering::Greater => println!("Too big"),
+            Ordering::Equal => {
+                println!("You win!");
+                println!("Your guess is {}", guess);
+                break;
+            }
+        }
     }
-
-    println!("Your guess is {}", guess);
 }
