@@ -30,5 +30,9 @@ fn main() {
         let y = y.len();
         println!("Length of y is {}", y); // This changes y totally if it is outside scope
     }
-    println!("y is {}", y)
+    println!("y is {}", y);
+
+    let spaces = "    ";
+    spaces = spaces.len(); // This is not shadowing rather it is tring to reassign immutable variable with another value
+    println!("Length of spaces are {spaces}");
 }
