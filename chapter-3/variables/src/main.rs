@@ -17,9 +17,18 @@
 fn main() {
     let x = 5;
     let x = x + 1; //operation on outer x
+                   //This is different from mut as transformations are allowed on let but not re-assignment
     {
         let x = x * 2; //operation on outer x after x+1
         println!("The value of x in the inner scope {x}");
     } //inner operation is destroyed coming out of scope
     println!("The value of x outside scope {x}"); //only x+1 remains
+
+    //
+    let y = "hello";
+    {
+        let y = y.len();
+        println!("Length of y is {}", y); // This changes y totally if it is outside scope
+    }
+    println!("y is {}", y)
 }
