@@ -3,7 +3,8 @@ fn main() {
     //print_name();
     // sum(3, 4);
     // print_labelled_measurements(5, 'm');
-    statements_expressions();
+    // statements_expressions();
+    func_with_return();
 }
 
 fn print_name() {
@@ -31,4 +32,13 @@ fn statements_expressions() {
         x //this acts as a return value for the scope and is assigned to "a"
     }; //here semicolon is important
     println!("a is {a}");
+}
+
+fn func_with_return() {
+    fn five() -> i32 //type of return
+    {
+        5
+    } //returns a i32 value 5
+    let x = five();
+    println!("x is {x}");
 }
