@@ -1,8 +1,9 @@
 fn main() {
     println!("Hello, world!");
     //print_name();
-    sum(3, 4);
-    print_labelled_measurements(5, 'm');
+    // sum(3, 4);
+    // print_labelled_measurements(5, 'm');
+    statements_expressions();
 }
 
 fn print_name() {
@@ -21,4 +22,13 @@ fn sum(x: u32, y: u32) {
 
 fn print_labelled_measurements(value: i32, unit_label: char) {
     println! {"The measurement is {value}{unit_label}"};
+}
+
+fn statements_expressions() {
+    let y = 5;
+    let a = {
+        let x = 3; //this statement alone does not have any return value
+        x //this acts as a return value for the scope and is assigned to "a"
+    }; //here semicolon is important
+    println!("a is {a}");
 }
