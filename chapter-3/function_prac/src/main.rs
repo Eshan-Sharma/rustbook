@@ -41,4 +41,9 @@ fn func_with_return() {
     } //returns a i32 value 5
     let x = five();
     println!("x is {x}");
+
+    println!("Plus one is of 9 is {}", plus_one(9));
+    fn plus_one(x: i32) -> i32 {
+        x + 1 //if semicolon is added here the code does not compile and no 'return'
+    }
 }
