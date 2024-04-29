@@ -20,6 +20,8 @@ fn main() {
     multiple_loop();
     println!("---------------------------------");
     lift_off();
+    println!("---------------------------------");
+    iterator_loop();
 }
 fn lift_off(){
     let mut number = 3;
@@ -29,6 +31,19 @@ fn lift_off(){
     }
     println!("Lift off");
 
+}
+fn iterator_loop(){
+    let a = [1,2,3,4,5];
+    let mut index = 0;
+    // unoptimized
+    // while index<5{
+    //     println!("The value is {}",a[index]);
+    //     index+=1;
+    // }
+    //Optimized
+    for element in a{
+        println!("Value is {element}");
+    }
 }
 
 fn multiple_loop() {
