@@ -22,6 +22,11 @@ fn main() {
     lift_off();
     println!("---------------------------------");
     iterator_loop();
+    println!("---------------------------------");
+    println!("32 Fehrenheit is {} celsius",fahrenheit_to_celsius(32.0));
+    println!("---------------------------------");
+    println!("0 Celsius is {} fahrenheit",celsius_to_fahrenheit(0.0));
+
 }
 fn lift_off(){
     let mut number = 3;
@@ -70,4 +75,14 @@ fn multiple_loop() {
         count += 1;
     }
     println!("End count = {count}");
+}
+
+fn fahrenheit_to_celsius(x:f64)-> f64{
+let celsius = (x-32.0)/1.8;
+celsius
+}
+
+fn celsius_to_fahrenheit(x:f64)->f64{
+let fahrenheit = (x*9.0)/5.0 + 32.0;
+fahrenheit
 }
