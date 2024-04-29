@@ -16,4 +16,8 @@ fn main() {
         }
         Err(..) => println!("this was not an integer: {}", trimmed),
     };
+    let number = 10;
+    if number < 18 {
+        println!("{number} is less than 18");
+    }
 }
