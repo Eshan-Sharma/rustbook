@@ -4,7 +4,14 @@ fn main() {
     // sum(3, 4);
     // print_labelled_measurements(5, 'm');
     // statements_expressions();
-    func_with_return();
+    // func_with_return();
+    // let y = {
+    //     let x = 1;
+    //     x+1
+    // };
+    // println!("y is: {y}");
+    let y = add_five(3);
+    println!("{}",y);
 }
 
 fn print_name() {
@@ -46,4 +53,8 @@ fn func_with_return() {
     fn plus_one(x: i32) -> i32 {
         x + 1 //if semicolon is added here the code does not compile and no 'return'
     }
+}
+
+fn add_five(x:i32) -> i32 {
+    x+5 //Implicit return
 }
