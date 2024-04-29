@@ -25,11 +25,17 @@ fn main() {
 }
 fn lift_off(){
     let mut number = 3;
-    while number!=0{
-        println!("{number}");
-        number-=1;
+    // while number!=0{
+    //     println!("{number}");
+    //     number-=1;
+    // }
+    // println!("Lift off");
+
+    //Using for a reverse a range(rev)
+    for number in (1..4).rev(){
+        println!("Countdown {number}");
     }
-    println!("Lift off");
+    println!("Lift off!");
 
 }
 fn iterator_loop(){
