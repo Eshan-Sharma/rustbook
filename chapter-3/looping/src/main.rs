@@ -18,6 +18,17 @@ fn main() {
     println!("The result is {result}");
     println!("---------------------------------");
     multiple_loop();
+    println!("---------------------------------");
+    lift_off();
+}
+fn lift_off(){
+    let mut number = 3;
+    while number!=0{
+        println!("{number}");
+        number-=1;
+    }
+    println!("Lift off");
+
 }
 
 fn multiple_loop() {
