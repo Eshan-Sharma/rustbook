@@ -59,6 +59,10 @@ fn main() {
         "email is: {}, username: {}, user status is active:{}",
         user2.email, user2.name, user2.active
     );
+    // println!(
+    // "name is {},email is {} and the user is active:{}",
+    // user.name, user.email, user.active
+    // ); // this will result an error since the ownership of String is passed to user2 (remember heap and stack data)
 
     // //tuple struct
     // let black = Colour(0, 0, 0);
