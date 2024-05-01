@@ -1,12 +1,3 @@
-//classic struct
-struct User {
-    active: bool,
-    name: String,
-    email: String,
-}
-//tuple struct
-struct Colour(i32, i32, i32);
-
 //Unit struct
 struct CalculateArea;
 struct Rectangle {
@@ -24,6 +15,13 @@ enum Direction {
     South,
     East,
     West,
+}
+
+//classic struct
+struct User {
+    active: bool,
+    name: String,
+    email: String,
 }
 fn main() {
     //classic struct
@@ -64,9 +62,13 @@ fn main() {
     // user.name, user.email, user.active
     // ); // this will result an error since the ownership of String is passed to user2 (remember heap and stack data)
 
-    // //tuple struct
-    // let black = Colour(0, 0, 0);
-    // println!("{},{},{}", black.0, black.1, black.2);
+    //tuple struct
+    struct Color(u32, u32, u32);
+    let black = Color(0, 0, 0);
+    println!(
+        "black 1: {},black 2: {},black 3: {}",
+        black.0, black.1, black.2
+    );
 
     // let rect = Rectangle {
     //     width: 12,
