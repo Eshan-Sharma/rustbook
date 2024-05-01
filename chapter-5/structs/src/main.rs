@@ -41,6 +41,17 @@ fn main() {
         "manager email is: {}, status is active:{}",
         manager.email, manager.active
     );
+    let manager2 = Manager {
+        email: String::from("awesomemanager@email.com"),
+        username: String::from("ManagerIsMe"),
+        active: manager.active, //Update syntax to create new instance of struct from another instance
+        sign_in_count: 1,
+    };
+    println!(
+        "manager2 email is: {}, status is active:{}, username: {}",
+        manager2.email, manager2.active, manager2.username
+    );
+
     // //tuple struct
     // let black = Colour(0, 0, 0);
     // println!("{},{},{}", black.0, black.1, black.2);
