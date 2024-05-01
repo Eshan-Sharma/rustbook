@@ -51,6 +51,14 @@ fn main() {
         "manager2 email is: {}, status is active:{}, username: {}",
         manager2.email, manager2.active, manager2.username
     );
+    let user2 = User {
+        email: String::from("cooldude420@email.com"),
+        ..user //another syntax to get the same results as update syntax from another instance
+    };
+    println!(
+        "email is: {}, username: {}, user status is active:{}",
+        user2.email, user2.name, user2.active
+    );
 
     // //tuple struct
     // let black = Colour(0, 0, 0);
