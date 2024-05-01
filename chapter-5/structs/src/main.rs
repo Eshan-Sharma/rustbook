@@ -62,8 +62,8 @@ struct Manager {
 }
 fn build_manager(email: String, username: String) -> Manager {
     Manager {
-        email: email,
-        username: username,
+        email,              //rust short hand
+        username: username, //without rust shorthand
         active: true,
         sign_in_count: 1,
     }
