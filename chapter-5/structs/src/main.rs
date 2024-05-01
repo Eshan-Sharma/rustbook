@@ -1,15 +1,3 @@
-//Unit struct
-struct CalculateArea;
-struct Rectangle {
-    width: i32,
-    height: i32,
-}
-impl Rectangle {
-    fn area(&self) -> i32 {
-        self.height * self.width
-    }
-}
-
 enum Direction {
     North,
     South,
@@ -24,51 +12,67 @@ struct User {
     email: String,
 }
 fn main() {
-    //classic struct
-    let user = User {
-        active: true,
-        name: String::from("Eshan"),
-        email: String::from("hfasd@email.com"),
-    };
-    println!(
-        "name is {},email is {} and the user is active:{}",
-        user.name, user.email, user.active
-    );
-    let manager = build_manager(String::from("manager@email.com"), String::from("boss420"));
-    println!(
-        "manager email is: {}, status is active:{}",
-        manager.email, manager.active
-    );
-    let manager2 = Manager {
-        email: String::from("awesomemanager@email.com"),
-        username: String::from("ManagerIsMe"),
-        active: manager.active, //Update syntax to create new instance of struct from another instance
-        sign_in_count: 1,
-    };
-    println!(
-        "manager2 email is: {}, status is active:{}, username: {}",
-        manager2.email, manager2.active, manager2.username
-    );
-    let user2 = User {
-        email: String::from("cooldude420@email.com"),
-        ..user //another syntax to get the same results as update syntax from another instance
-    };
-    println!(
-        "email is: {}, username: {}, user status is active:{}",
-        user2.email, user2.name, user2.active
-    );
-    // println!(
-    // "name is {},email is {} and the user is active:{}",
-    // user.name, user.email, user.active
-    // ); // this will result an error since the ownership of String is passed to user2 (remember heap and stack data)
-
-    //tuple struct
-    struct Color(u32, u32, u32);
-    let black = Color(0, 0, 0);
-    println!(
-        "black 1: {},black 2: {},black 3: {}",
-        black.0, black.1, black.2
-    );
+    {
+        //classic struct
+        let user = User {
+            active: true,
+            name: String::from("Eshan"),
+            email: String::from("hfasd@email.com"),
+        };
+        println!(
+            "name is {},email is {} and the user is active:{}",
+            user.name, user.email, user.active
+        );
+        let manager = build_manager(String::from("manager@email.com"), String::from("boss420"));
+        println!(
+            "manager email is: {}, status is active:{}",
+            manager.email, manager.active
+        );
+        let manager2 = Manager {
+            email: String::from("awesomemanager@email.com"),
+            username: String::from("ManagerIsMe"),
+            active: manager.active, //Update syntax to create new instance of struct from another instance
+            sign_in_count: 1,
+        };
+        println!(
+            "manager2 email is: {}, status is active:{}, username: {}",
+            manager2.email, manager2.active, manager2.username
+        );
+        let user2 = User {
+            email: String::from("cooldude420@email.com"),
+            ..user //another syntax to get the same results as update syntax from another instance
+        };
+        println!(
+            "email is: {}, username: {}, user status is active:{}",
+            user2.email, user2.name, user2.active
+        );
+        // println!(
+        // "name is {},email is {} and the user is active:{}",
+        // user.name, user.email, user.active
+        // ); // this will result an error since the ownership of String is passed to user2 (remember heap and stack data)
+    }
+    {
+        //tuple struct
+        struct Color(u32, u32, u32);
+        let black = Color(0, 0, 0);
+        println!(
+            "black 1: {},black 2: {},black 3: {}",
+            black.0, black.1, black.2
+        );
+    }
+    {
+        //Unit struct
+        struct CalculateArea;
+        struct Rectangle {
+            width: i32,
+            height: i32,
+        }
+        impl Rectangle {
+            fn area(&self) -> i32 {
+                self.height * self.width
+            }
+        }
+    }
 
     // let rect = Rectangle {
     //     width: 12,
