@@ -36,16 +36,35 @@ fn main() {
         "name is {},email is {} and the user is active:{}",
         user.name, user.email, user.active
     );
+    let manager = build_manager(String::from("manager@email.com"), String::from("boss420"));
+    println!(
+        "manager email is: {}, status is active:{}",
+        manager.email, manager.active
+    );
+    // //tuple struct
+    // let black = Colour(0, 0, 0);
+    // println!("{},{},{}", black.0, black.1, black.2);
 
-    //tuple struct
-    let black = Colour(0, 0, 0);
-    println!("{},{},{}", black.0, black.1, black.2);
+    // let rect = Rectangle {
+    //     width: 12,
+    //     height: 12,
+    // };
+    // println!("{}", rect.area());
 
-    let rect = Rectangle {
-        width: 12,
-        height: 12,
-    };
-    println!("{}", rect.area());
+    // let my_direction = Direction::East;
+}
 
-    let my_direction = Direction::East;
+struct Manager {
+    email: String,
+    username: String,
+    active: bool,
+    sign_in_count: u32,
+}
+fn build_manager(email: String, username: String) -> Manager {
+    Manager {
+        email: email,
+        username: username,
+        active: true,
+        sign_in_count: 1,
+    }
 }
