@@ -1,3 +1,5 @@
+use std::vec;
+
 fn main() {
     let mut v: Vec<i32> = Vec::new(); //creating a new vector
     v.push(2); //updating a vector
@@ -26,9 +28,32 @@ fn main() {
     }
     {
         //Iterating over vector
-        let v = vec![1, 2, 3, 4];
+        let v = vec![1, 2, 3];
         for i in &v {
-            println!("{}", i);
+            println!("Original vector - {}", i);
+        }
+    }
+    {
+        let mut v = vec![1, 2, 3];
+        for i in &mut v {
+            *i *= 2; //derefernce to get the original value then multiply by 2
+            println!("Vector changed - {}", i);
+        }
+    }
+    {
+        #[derive(Debug)]
+        enum SpreadsheetCell {
+            Int(i32),
+            Float(f32),
+            Text(String),
+        }
+        let vector_of_different_types = vec![
+            SpreadsheetCell::Int(2),
+            SpreadsheetCell::Float(12.3),
+            SpreadsheetCell::Text(String::from("Hello")),
+        ];
+        for i in &vector_of_different_types {
+            println!("{:?}", i);
         }
     }
 }
