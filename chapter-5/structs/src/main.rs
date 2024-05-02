@@ -110,6 +110,22 @@ fn main() {
 
         println!("rect1 is {:?}", rect1);
     }
+    {
+        struct Rectangle {
+            width: u32,
+            height: u32,
+        }
+        impl Rectangle {
+            fn area(&self) -> u32 {
+                self.width * self.height
+            }
+        }
+        let rect1 = Rectangle {
+            width: 12,
+            height: 10,
+        };
+        println!("The area of rectange is {} square pixels", rect1.area())
+    }
 }
 
 struct Manager {
