@@ -74,8 +74,11 @@ fn main() {
             "The area of rectangle is {} square picels",
             area(width, height)
         );
-        fn area(width: i32, height: i32) -> i32 {
-            width * height
+        // fn area(width: i32, height: i32) -> i32 {
+        //     width * height
+        // }
+        fn area(dimentions: (u32, u32)) -> u32 {
+            dimentions.0 * dimentions.1
         }
     }
 }
