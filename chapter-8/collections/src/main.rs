@@ -41,6 +41,7 @@ fn main() {
         }
     }
     {
+        //If you know at runtime the exhaustive set of types the program will get at runtime you can use enum
         #[derive(Debug)]
         enum SpreadsheetCell {
             Int(i32),
@@ -55,5 +56,21 @@ fn main() {
         for i in &vector_of_different_types {
             println!("{:?}", i);
         }
+    }
+    {
+        let mut s = String::new();
+        let data = "initial content";
+        //creating a String from a string literal
+        let string_data = data.to_string();
+        let s = data.to_string();
+
+        let mut greet = String::from("नमस्ते");
+        greet.push_str(" world"); //updating string
+        println!("{}", greet);
+
+        let s1 = String::from("yo yo ");
+        let s2 = String::from("honey singh!");
+        let s3 = s1 + &s2; //concatenation using + operator, s1 is moved here and s2 is referenced
+        println!("{s3}");
     }
 }
