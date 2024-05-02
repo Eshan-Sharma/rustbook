@@ -1,4 +1,4 @@
-use std::vec;
+use std::{collections::HashMap, vec};
 
 fn main() {
     let mut v: Vec<i32> = Vec::new(); //creating a new vector
@@ -87,5 +87,13 @@ fn main() {
         let s1 = String::from("hello");
         let h = &s1[0..5];
         println!("{h}");
+    }
+    {
+        let mut scores = HashMap::new();
+        scores.insert(String::from("blue"), 10);
+        scores.insert(String::from("red"), 30);
+        for (key, value) in &scores {
+            println!("{},{}", key, value);
+        }
     }
 }
