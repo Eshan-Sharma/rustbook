@@ -1,3 +1,5 @@
+use std::os::unix::net::recv_vectored_with_ancillary_from;
+
 enum Direction {
     North,
     South,
@@ -72,14 +74,29 @@ fn main() {
         let height = 40;
         println!(
             "The area of rectangle is {} square picels",
-            area(width, height)
+            area((width, height))
         );
         // fn area(width: i32, height: i32) -> i32 {
         //     width * height
         // }
-        fn area(dimentions: (u32, u32)) -> u32 {
-            dimentions.0 * dimentions.1
+        // fn area(dimentions: (u32, u32)) -> u32 {
+        //     dimentions.0 * dimentions.1
+        // }
+
+        struct Rectangle {
+            width: u32,
+            height: u32,
         }
+        fn area(reactangle: &Rectangle) -> u32 {
+            reactangle.width * reactangle.height
+        }
+
+        let rect1 = Rectangle {
+            width: 30,
+            height: 50,
+        };
+        println!("The area of rectangel is {} square pixels",
+        area(&rect1));
     }
 }
 
