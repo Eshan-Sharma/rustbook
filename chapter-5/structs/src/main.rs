@@ -67,6 +67,17 @@ fn main() {
             let subject = AlwaysEqual;
         }
     }
+    {
+        let width = 30;
+        let height = 40;
+        println!(
+            "The area of rectangle is {} square picels",
+            area(width, height)
+        );
+        fn area(width: i32, height: i32) -> i32 {
+            width * height
+        }
+    }
 }
 
 struct Manager {
