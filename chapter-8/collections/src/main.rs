@@ -72,5 +72,20 @@ fn main() {
         let s2 = String::from("honey singh!");
         let s3 = s1 + &s2; //concatenation using + operator, s1 is moved here and s2 is referenced
         println!("{s3}");
+
+        //instead of '+' we can use format!
+        let s1 = String::from("tic");
+        let s2 = String::from("tac");
+        let s3 = String::from("toe");
+
+        let s = format!("{s1}-{s2}-{s3}");
+        println!("{s}");
+
+        // let s1 = String::from("hello");
+        // let h = s1[0]; //this is not a valid operation in string
+        //however,slicing works
+        let s1 = String::from("hello");
+        let h = &s1[0..5];
+        println!("{h}");
     }
 }
