@@ -62,25 +62,11 @@ fn main() {
     }
     {
         //Unit struct
-        struct CalculateArea;
-        struct Rectangle {
-            width: i32,
-            height: i32,
-        }
-        impl Rectangle {
-            fn area(&self) -> i32 {
-                self.height * self.width
-            }
+        struct AlwaysEqual;
+        fn main() {
+            let subject = AlwaysEqual;
         }
     }
-
-    // let rect = Rectangle {
-    //     width: 12,
-    //     height: 12,
-    // };
-    // println!("{}", rect.area());
-
-    // let my_direction = Direction::East;
 }
 
 struct Manager {
