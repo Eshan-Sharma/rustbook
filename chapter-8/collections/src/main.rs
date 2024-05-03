@@ -1,3 +1,4 @@
+use core::num;
 use std::{collections::HashMap, vec};
 
 fn main() {
@@ -94,6 +95,33 @@ fn main() {
         scores.insert(String::from("red"), 30);
         for (key, value) in &scores {
             println!("{},{}", key, value);
+        }
+    }
+    {
+        let number = vec![1, 4, 2, 5, 1, 4, 4, 3, 6];
+        println!("Mean is {}", mean(&number));
+        println!("Median is {}", median(&number));
+
+        fn mean(number: &[i32]) -> f64 {
+            //Sum the numbers and divide by the length
+            let mut sum = 0.0;
+            for num in number {
+                sum += *num as f64;
+            }
+            let len = number.len() as f64;
+            sum / len
+        }
+
+        fn median(number: &[i32]) -> i32 {
+            //1. Sort the vactor
+            //2. return the middle
+            //If the vector has an even length, return the mean of the middle numbers
+            let sorted_vector = number.clone();
+            println!("{:?}", sorted_vector);
+            0
+        }
+        fn mode(number: &[i32]) -> i32 {
+            0
         }
     }
 }
