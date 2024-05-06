@@ -1,15 +1,25 @@
+struct Point<T> {
+    x: T,
+    y: T,
+}
 fn main() {
-    let number_list = vec![34, 50, 25, 100, 65];
-    let largest_num = largest(&number_list);
-    println!("Largest number is {}", largest_num);
+    {
+        let integer = Point { x: 1, y: 3 };
+        let float = Point { x: 2.3, y: 9.0 };
+    }
+    {
+        let number_list = vec![34, 50, 25, 100, 65];
+        let largest_num = largest(&number_list);
+        println!("Largest number is {}", largest_num);
 
-    let number_list = vec![102, 34, 6000, 89, 54, 2, 43, 8];
-    let largest_num = largest(&number_list);
-    println!("Largest number is {}", largest_num);
+        let number_list = vec![102, 34, 6000, 89, 54, 2, 43, 8];
+        let largest_num = largest(&number_list);
+        println!("Largest number is {}", largest_num);
 
-    let char_list = vec!['q', 'd', 'c', 'a', 'z', 'n'];
-    let largest_character = largest(&char_list);
-    println!("Largest character is {}", largest_character);
+        let char_list = vec!['q', 'd', 'c', 'a', 'z', 'n'];
+        let largest_character = largest(&char_list);
+        println!("Largest character is {}", largest_character);
+    }
 }
 
 // fn largest(list: &Vec<i32>) -> &i32 {
