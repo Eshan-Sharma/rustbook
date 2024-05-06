@@ -6,6 +6,8 @@ fn main() {
     {
         let integer = Point { x: 1, y: 3 };
         let float = Point { x: 2.3, y: 9.0 };
+        //wont work if we have different in x and y data types
+        let wont_work = Point { x: 1, y: 9.0 };
     }
     {
         let number_list = vec![34, 50, 25, 100, 65];
