@@ -1,13 +1,13 @@
-struct Point<T> {
+struct Point<T, U> {
     x: T,
-    y: T,
+    y: U,
 }
 fn main() {
     {
         let integer = Point { x: 1, y: 3 };
         let float = Point { x: 2.3, y: 9.0 };
-        //wont work if we have different in x and y data types
-        let wont_work = Point { x: 1, y: 9.0 };
+        //wont work if we have different in x and y data types if only Point<T> used
+        let wont_work = Point { x: 1, y: 9.0 }; //Works with Point<T,U> used
     }
     {
         let number_list = vec![34, 50, 25, 100, 65];
