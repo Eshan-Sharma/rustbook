@@ -8,7 +8,7 @@ fn main() {
     println!("Largest number is {}", largest_num);
 
     let char_list = vec!['q', 'd', 'c', 'a', 'z', 'n'];
-    let largest_character = largest_char(&char_list);
+    let largest_character = largest(&char_list);
     println!("Largest character is {}", largest_character);
 }
 
@@ -30,7 +30,7 @@ fn main() {
 //     }
 //     largest
 // }
-fn largest<T>(list: &Vec<T>) -> &T {
+fn largest<T: std::cmp::PartialOrd>(list: &Vec<T>) -> &T {
     let mut largest_element = &list[0];
     for element in list {
         if largest_element < element {
