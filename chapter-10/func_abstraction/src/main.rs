@@ -6,6 +6,10 @@ fn main() {
     let number_list = vec![102, 34, 6000, 89, 54, 2, 43, 8];
     let largest_num = largest(&number_list);
     println!("Largest number is {}", largest_num);
+
+    let char_list = vec!['q', 'd', 'c', 'a', 'z', 'n'];
+    let largest_character = largest_char(&char_list);
+    println!("Largest character is {}", largest_character);
 }
 
 fn largest(list: &Vec<i32>) -> &i32 {
@@ -16,4 +20,13 @@ fn largest(list: &Vec<i32>) -> &i32 {
         }
     }
     largest_num
+}
+fn largest_char(list: &[char]) -> &char {
+    let mut largest = &list[0];
+    for character in list {
+        if character > largest {
+            largest = character;
+        }
+    }
+    largest
 }
