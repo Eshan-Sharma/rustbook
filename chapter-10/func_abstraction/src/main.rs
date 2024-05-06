@@ -2,9 +2,15 @@ struct Point<T, U> {
     x: T,
     y: U,
 }
+impl<T, U> Point<T, U> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
 fn main() {
     {
         let integer = Point { x: 1, y: 3 };
+        println!("integer.x is {}", integer.x);
         let float = Point { x: 2.3, y: 9.0 };
         //wont work if we have different in x and y data types if only Point<T> used
         let wont_work = Point { x: 1, y: 9.0 }; //Works with Point<T,U> used
