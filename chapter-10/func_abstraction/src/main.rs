@@ -12,21 +12,30 @@ fn main() {
     println!("Largest character is {}", largest_character);
 }
 
-fn largest(list: &Vec<i32>) -> &i32 {
-    let mut largest_num: &i32 = &list[0];
-    for number in list {
-        if number > largest_num {
-            largest_num = number;
+// fn largest(list: &Vec<i32>) -> &i32 {
+//     let mut largest_num: &i32 = &list[0];
+//     for number in list {
+//         if number > largest_num {
+//             largest_num = number;
+//         }
+//     }
+//     largest_num
+// }
+// fn largest_char(list: &[char]) -> &char {
+//     let mut largest = &list[0];
+//     for character in list {
+//         if character > largest {
+//             largest = character;
+//         }
+//     }
+//     largest
+// }
+fn largest<T>(list: &Vec<T>) -> &T {
+    let mut largest_element = &list[0];
+    for element in list {
+        if largest_element < element {
+            largest_element = element;
         }
     }
-    largest_num
-}
-fn largest_char(list: &[char]) -> &char {
-    let mut largest = &list[0];
-    for character in list {
-        if character > largest {
-            largest = character;
-        }
-    }
-    largest
+    largest_element
 }
